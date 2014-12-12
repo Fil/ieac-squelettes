@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en"> <!--<![endif]-->
+<head>
+
+    <!-- Basic Page Needs
+  ================================================== -->
+    <title>[(#NOM_SITE_SPIP|textebrut)][ - (#SLOGAN_SITE_SPIP|textebrut)]</title>
+    [<meta name="description" content="(#DESCRIPTIF_SITE_SPIP|couper{150}|textebrut)" />]
+    <INCLURE{fond=inclure/head} />
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+<body>
+
+
+
+    <!-- Primary Page Layout
+    ================================================== -->
+
+    <div class="container">
+
+        <div class="sixteen columns">
+            <h1 class="remove-bottom" style="margin-top: 40px">#NOM_SITE_SPIP</h1>
+            <h5>#SLOGAN_SITE_SPIP</h5>
+            <hr />
+        </div>
+
+        <B_whatweare>
+        <BOUCLE_whatweare(ARTICLES){id_rubrique IN 4,3}{doublons}>
+        	<div class="[(#COMPTEUR_BOUCLE|alterner{ten,four})] columns what">
+            <h2 class="#EDIT{titre}">#TITRE</h2>
+            <div class="#EDIT{texte} texte offset-by-one">#TEXTE</div>
+            </div>
+        </BOUCLE_whatweare>
+        </B_whatweare>
+
+        <hr />
+
+        <B_whatwedo>
+        <BOUCLE_whatwedo(ARTICLES){id_rubrique IN 2,5}{doublons}>
+        	<div class="[(#COMPTEUR_BOUCLE|alterner{six,eight})] columns what">
+            <h2 class="#EDIT{titre}">#TITRE</h2>
+            <div class="#EDIT{texte} texte offset-by-one">#TEXTE</div>
+            </div>
+        </BOUCLE_whatwedo>
+        </B_whatwedo>
+
+        <hr />
+
+        <BOUCLE_whoweare(RUBRIQUES){id_rubrique=1}{doublons}>
+            <div class="sixteen columns">
+                <h2 class="#EDIT{titre}">#TITRE</h2>
+            </div>
+            <div class="whoweare">
+            <BOUCLE_casting(ARTICLES){id_rubrique}>
+            <div class="[(#COMPTEUR_BOUCLE|alterner{seven columns offset-by-one, seven columns})]">
+            <div>
+                <h3>[(#LOGO_ARTICLE|image_reduire{90,*}|image_recadre{90,90,center center}) ]#TITRE</h3>
+                <div class="#EDIT{texte} texte">#TEXTE</div>
+            </div>
+            </div>
+            </BOUCLE_casting>
+            
+            </div>
+
+        </BOUCLE_whoweare>
+
+        <hr />
+
+        <BOUCLE_therest(RUBRIQUES){doublons}
+        {par num titre, titre}>
+            <div class="[(#_therest:COMPTEUR_BOUCLE|alterner{nine columns, six columns offset-by-one})][ (#TITRE|match{Worked For}|?{whoweare})]">
+            <BOUCLE_therest2(ARTICLES){id_rubrique}{doublons}>
+            <div>
+            <div>
+            <h2 class="#EDIT{titre}">#TITRE</h2>
+                <div class="#EDIT{texte} texte offset-by-one">#TEXTE</div>
+            </div>
+            </div>
+            </BOUCLE_therest2>
+         </div>
+
+        </BOUCLE_therest>
+
+
+
+    </div><!--.container-->
+
+    <br class="clear" />
+
+    <div id="footer">
+    </div><!--#footer-->
+
+<script>
+$('.whoweare>div')
+.on('click', function() {
+	$('.whoweare>div.hover')
+	.add(this)
+	.toggleClass('hover');
+});
+</script>
+
+
+<!-- End Document
+================================================== -->
+</body>
+</html>
