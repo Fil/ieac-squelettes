@@ -1,64 +1,68 @@
-@font-face {font-family: 'LeagueGothic';font-weight: bold;src:url('polis/leaguegothic-regular-webfont.ttf') format('truetype');}
-@font-face {font-family: 'Alegreya';font-weight: normal;src:url('polis/Alegreya-Regular.otf') format('truetype');}
-
-/*
-@font-face {font-family: 'Alegreya';font-weight: bold;src:url('polis/Alegreya-Bold.otf') format('truetype');}
-@font-face {font-family: 'Alegreya';font-style: italic;src:url('polis/Alegreya-Italic.otf') format('truetype');}
-*/
-
 body {
-	color: black;
-	background-color: white;
-	font-size: 100%;
-	line-height: 1.4em;
-	font-family: Alegreya, serif;
-	padding-top: 3em;
-	padding-bottom: 5em;
-}
-h1, h2, h3, h4, h5, h6 {
-	font-family: LeagueGothic, sans-serif;
+background-color: #F8F8E5;
 }
 
-h1 { font-size: 48px; }
-
-h2 {
-	margin-top: 1em;
-	border-bottom: solid 1px #d80394 /* #ddd */;
+@media only screen and (min-width:768px) {
+.whoweare>div {
+   height: 18em;
+}
+.whoweare>div>div {
+   overflow: hidden;
+   height: 15em;
+}
 }
 
-h3 {
-	margin-top: 0.8em;
+.whoweare>div {
+   margin-bottom: 3em;
 }
 
-p {
-	text-indent: 1.5em;
-	margin-bottom: 0;
-}
-p:first-of-type {
-	text-indent: 0em;
+.what {
+   padding: 1em;
 }
 
-/* le reset efface meme ca */
-i { font-style: italic; }
+.whoweare>div>div {
+   padding: 1em;
+   outline: 0px solid #F8F8E5;
+   background-color: #F8F8E5;
+   border-bottom: solid 4px #dee0c8;
+}
 
-/* colors */
-h1,h2 { color: #d80394; }
-hr { border-top-color: #d80394; }
+.whoweare>div:hover>div,.whoweare>div.hover>div {
+   position: relative;
+   background-color: #fff;
+   height: auto;
+   overflow: visible;
+   z-index: 1;
+   outline: 4px solid #dee0c8;
+   transition: outline 0.4s, background-color 1s;
+   display: block;
+   border-bottom: 0px;
+}
+
+a { color: #c11 }
+
+.whoweare>div a { color: #222; text-decoration: none; }
+.whoweare>div:hover a { color: #c11; text-decoration: underline; }
 
 
-/* traductions */
-div.lang { text-align: left; }
-div.lang span { padding:0 3px; border: 1px solid #ccc; }
-div.lang span.on { border-color: #666; }
-div.lang span a { text-decoration: none; }
+#footer {
+	margin-top: 5em;
+	height: 50em;
+	background: url(alternative_energies_footer.jpg);
+	background-size: cover;
+}
 
-/* RESPONSIVE */
-@media only screen and (min-width: 768px) {
-	body {
-		line-height: 1.58em;
-	}
-	p {
-		font-size: 18px;
-		text-rendering: optimizeLegibility;
-	}
+
+.whoweare>div ximg {
+  -webkit-filter: grayscale(100%);
+  -moz-filter: grayscale(100%);
+  -ms-filter: grayscale(100%);
+  -o-filter: grayscale(100%);
+  filter: grayscale(100%);
+  filter: url('grayscale.svg#greyscale');
+  filter: gray; /* IE 6-9 */
+}
+
+body, h1, h2, h3, h4, h5, h6 {
+	font-family: Candara,Calibri,Segoe,"Segoe UI",Optima,Arial,sans-serif;
 }
