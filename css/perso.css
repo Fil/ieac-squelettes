@@ -66,3 +66,17 @@ a { color: #c11 }
 body, h1, h2, h3, h4, h5, h6 {
 	font-family: Candara,Calibri,Segoe,"Segoe UI",Optima,Arial,sans-serif;
 }
+
+.chapo {
+    font-weight: 900;
+    font-size: 1.5em;
+    line-height: 1.4;
+}
+
+.more {
+ text-align: right;
+}
+
+.info-publi {
+display: none;
+}
