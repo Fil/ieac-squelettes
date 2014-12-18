@@ -33,7 +33,7 @@
 
         <B_whatweare>
         <BOUCLE_whatweare(ARTICLES){id_rubrique IN 4,3}{doublons}>
-        	<div class="[(#COMPTEUR_BOUCLE|alterner{ten,four})] columns what">
+            <div class="[(#COMPTEUR_BOUCLE|alterner{ten,four})] columns what">
             <h2 class="#EDIT{titre}">#TITRE</h2>
             <div class="#EDIT{texte} texte offset-by-one">#TEXTE</div>
             </div>
@@ -44,7 +44,7 @@
 
         <B_whatwedo>
         <BOUCLE_whatwedo(ARTICLES){id_rubrique IN 2,5}{doublons}>
-        	<div class="[(#COMPTEUR_BOUCLE|alterner{six,eight})] columns what">
+            <div class="[(#COMPTEUR_BOUCLE|alterner{six,eight})] columns what">
             <h2 class="#EDIT{titre}">#TITRE</h2>
             <div class="#EDIT{texte} texte offset-by-one">#TEXTE</div>
             </div>
@@ -79,7 +79,13 @@
             <div>
             <div>
             <h2 class="#_therest:EDIT{titre}">#_therest:TITRE</h2>
-                <div class="#EDIT{texte} texte offset-by-one">[(#CHAPO|?{[<p>(#CHAPO|PtoBR) &nbsp; <span class="more"><a href="#URL_ARTICLE">Read more…</a></span></p>],#TEXTE})]</div>
+                <div class="#EDIT{texte} texte offset-by-one">[(#ID_RUBRIQUE|=={9}|?{<h5>#TITRE</h5>})
+                ][
+                    (#CHAPO|?{
+                        [<p>(#CHAPO|PtoBR) &nbsp; <span class="more"><a href="#URL_ARTICLE">Read more…</a></span></p>],
+                        #TEXTE
+                    })
+                ]</div>
             </div>
             </div>
             </BOUCLE_therest2>
@@ -99,9 +105,9 @@
 <script>
 $('.whoweare>div')
 .on('click', function() {
-	$('.whoweare>div.hover')
-	.add(this)
-	.toggleClass('hover');
+    $('.whoweare>div.hover')
+    .add(this)
+    .toggleClass('hover');
 });
 </script>
 
