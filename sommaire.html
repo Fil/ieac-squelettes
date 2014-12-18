@@ -16,7 +16,7 @@
     <![endif]-->
 
 </head>
-<body>
+<body class="page-sommaire">
 
 
 
@@ -81,7 +81,7 @@
             <h2 class="#_therest:EDIT{titre}">#_therest:TITRE</h2>
                 <div class="#EDIT{texte} texte offset-by-one">[(#ID_RUBRIQUE|=={9}|?{<h5>#TITRE</h5>})
                 ][
-                    (#CHAPO|?{
+                    (#CHAPO*|?{
                         [<p>(#CHAPO|PtoBR) &nbsp; <span class="more"><a href="#URL_ARTICLE">Read more…</a></span></p>],
                         #TEXTE
                     })
