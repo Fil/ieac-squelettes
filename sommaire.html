@@ -75,11 +75,11 @@
 
         <BOUCLE_therest(RUBRIQUES)
         {par num titre, titre}{doublons}>
-            <div class="[(#TITRE*|match{History}|?{eight columns, seven columns offset-by-one})]">            <BOUCLE_therest2(ARTICLES){id_rubrique}{doublons}>
+            <div class="[(#TITRE*|match{History}|?{seven columns, eight columns offset-by-one})]">            <BOUCLE_therest2(ARTICLES){id_rubrique}{doublons}>
             <div>
             <div>
-            <h2 class="#EDIT{titre}">#TITRE</h2>
-                <div class="#EDIT{texte} texte offset-by-one">[(#CHAPO|?{[(#CHAPO|PtoBR) &nbsp; <span class="more"><a href="#URL_ARTICLE">Read more…</a></span>],#TEXTE})]</div>
+            <h2 class="#_therest:EDIT{titre}">#_therest:TITRE</h2>
+                <div class="#EDIT{texte} texte offset-by-one">[(#CHAPO|?{[<p>(#CHAPO|PtoBR) &nbsp; <span class="more"><a href="#URL_ARTICLE">Read more…</a></span></p>],#TEXTE})]</div>
             </div>
             </div>
             </BOUCLE_therest2>
