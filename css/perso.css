@@ -86,3 +86,23 @@ display: none;
 }
 
 body.page-sommaire .spip_note_ref { display: none; }
+
+a[href$="pdf"]:last-of-type:after {
+ display: inline;
+ content:"pdf";
+ padding: 1px 3px;
+ background: #555;
+ color: #fff;
+ text-decoration: none;
+ vertical-align: text-top;
+ vertical-align: super;
+ top:-0.25em;
+ font-size: 9px;
+ font-weight: normal;
+-webkit-border-radius: 3px;
+-moz-border-radius: 3px;
+ border-radius: 3px;
+ text-transform: uppercase;
+ margin-left: 3px;
+ line-height: 0;
+}

@@ -25,20 +25,40 @@
 
     <div class="container">
 
-        <div class="sixteen columns">
+        <div class="sixteen columns header">
             <h1 class="remove-bottom" style="margin-top: 40px">#NOM_SITE_SPIP</h1>
-            <h5>#SLOGAN_SITE_SPIP</h5>
+            <h3>#SLOGAN_SITE_SPIP</h3>
             <hr />
         </div>
 
         <B_whatweare>
         <BOUCLE_whatweare(ARTICLES){id_rubrique IN 4,3}{doublons}>
-            <div class="[(#COMPTEUR_BOUCLE|alterner{ten,four})] columns what">
+            <div class="[(#COMPTEUR_BOUCLE|alterner{seven,seven})] columns what">
             <h2 class="#EDIT{titre}">#TITRE</h2>
             <div class="#EDIT{texte} texte offset-by-one">#TEXTE</div>
             </div>
         </BOUCLE_whatweare>
         </B_whatweare>
+
+        <BOUCLE_whattheysay(RUBRIQUES){id_rubrique IN 11,10}{doublons}>
+            <div class="seven columns what">            <BOUCLE_whattheysay2(ARTICLES){id_rubrique}{doublons}>
+            <div>
+            <div>
+            <h2 class="#_whattheysay:EDIT{titre}">#_whattheysay:TITRE</h2>
+                <div class="#EDIT{texte} texte offset-by-one">[(#ID_RUBRIQUE|=={9}|?{<h5>#TITRE</h5>})
+                ][
+                    (#CHAPO*|?{
+                        [<p>(#CHAPO|PtoBR) &nbsp; <span class="more"><a href="#URL_ARTICLE">Read more…</a></span></p>],
+                        #TEXTE
+                    })
+                ]</div>
+            </div>
+            </div>
+            </BOUCLE_whattheysay2>
+         </div>
+
+        </BOUCLE_whattheysay>
+
 
         <hr />
 
@@ -75,7 +95,7 @@
 
         <BOUCLE_therest(RUBRIQUES)
         {par num titre, titre}{doublons}>
-            <div class="[(#TITRE*|match{History}|?{six columns, nine columns offset-by-one})]">            <BOUCLE_therest2(ARTICLES){id_rubrique}{doublons}>
+            <div class="[(#TITRE*|match{History}|?{seven columns, eight columns offset-by-one})]">            <BOUCLE_therest2(ARTICLES){id_rubrique}{doublons}>
             <div>
             <div>
             <h2 class="#_therest:EDIT{titre}">#_therest:TITRE</h2>
