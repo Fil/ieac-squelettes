@@ -94,6 +94,7 @@
         <hr />
 
         <BOUCLE_therest(RUBRIQUES)
+        {racine}
         {par num titre, titre}{id_rubrique!=9}{doublons}>
             <div class="[(#TITRE*|match{History}|?{seven columns, eight columns offset-by-one})]">
             <BOUCLE_therest2(ARTICLES){id_rubrique}{doublons}>
