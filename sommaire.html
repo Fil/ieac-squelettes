@@ -94,7 +94,7 @@
         <hr />
 
         <BOUCLE_therest(RUBRIQUES)
-        {par num titre, titre}{doublons}>
+        {par num titre, titre}{id_rubrique!=9}{doublons}>
             <div class="[(#TITRE*|match{History}|?{seven columns, eight columns offset-by-one})]">            <BOUCLE_therest2(ARTICLES){id_rubrique}{doublons}>
             <div>
             <div>
@@ -112,6 +112,26 @@
          </div>
 
         </BOUCLE_therest>
+
+        <BOUCLE_casestudies(RUBRIQUES){id_rubrique=9}{doublons}>
+            <div class="sixteen columns">
+                <h2 class="#EDIT{titre}">#TITRE</h2>
+            </div>
+            <div class="whoweare">
+            <BOUCLE_case(ARTICLES){id_rubrique}{doublons}>
+            <div class="[(#COMPTEUR_BOUCLE|alterner{seven columns offset-by-one, seven columns})]">
+            <div>
+                <h3>[(#LOGO_ARTICLE|image_reduire{90,*}|image_recadre{90,90,center center}) ]#TITRE</h3>
+                <div class="#EDIT{texte} texte">#TEXTE</div>
+            </div>
+            </div>
+            </BOUCLE_case>
+            
+            </div>
+
+        </BOUCLE_casestudies>
+
+        <hr />
 
 
 
