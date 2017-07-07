@@ -40,11 +40,13 @@
         </BOUCLE_whatweare>
         </B_whatweare>
 
+
+        <B_news>
         <div class="seven columns what">
         <div>
         <div>
             <h2>News</h2>
-            <BOUCLE_news(ARTICLES){titre_mot=News}>
+            <BOUCLE_news(ARTICLES){titre_mot=News}{!par date}{0,3}>
                 <div class="#EDIT{texte} texte offset-by-one">[(#ID_RUBRIQUE|=={9}|?{<h5>#TITRE</h5>})
                 ][
                     (#CHAPO*|?{
@@ -56,6 +58,7 @@
             </div>
             </div>
         </div>
+        </B_news>
 
         <BOUCLE_whattheysay(RUBRIQUES){id_rubrique IN 10}{doublons}>
             <div class="seven columns what">
