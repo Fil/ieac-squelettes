@@ -33,7 +33,6 @@
 
         <div class="seven columns what">
         <div>
-        <div>
             <h2>News</h2>
             <BOUCLE_news(ARTICLES){titre_mot=News}{!par date}{0,3}>
                 <div class="#EDIT{texte} texte offset-by-one">[(#ID_RUBRIQUE|=={9}|?{<h5>#TITRE</h5>})
@@ -44,31 +43,27 @@
                     })
                 ]</div>
             </BOUCLE_news>
-            </div>
-            </div>
+           </div>
             
 	        <BOUCLE_contact(ARTICLES){id_rubrique IN 3}{doublons}>
-	            <div class="[(#COMPTEUR_BOUCLE|alterner{seven,seven})] columns what">
+	        <div>
 	            <h2 class="#EDIT{titre}">#TITRE</h2>
 	            <div class="#EDIT{texte} texte offset-by-one">#TEXTE</div>
-	            </div>
+	        </div>
 	        </BOUCLE_contact>
         </div>
 
-        <B_whatweare>
+
+        <div class="seven columns what">
         <BOUCLE_whatweare(ARTICLES){id_rubrique IN 4}{doublons}>
-            <div class="seven columns what">
             <h2 class="#EDIT{titre}">#TITRE</h2>
             <div class="#EDIT{texte} texte offset-by-one">#TEXTE</div>
             </div>
         </BOUCLE_whatweare>
-        </B_whatweare>
 
 
         <BOUCLE_whattheysay(RUBRIQUES){id_rubrique IN 10}{doublons}>
-            <div class="seven columns what">
         <BOUCLE_whattheysay2(ARTICLES){id_rubrique}{doublons}>
-            <div>
             <div>
             <h2 class="#_whattheysay:EDIT{titre}">#_whattheysay:TITRE</h2>
                 <div class="#EDIT{texte} texte offset-by-one">[(#ID_RUBRIQUE|=={9}|?{<h5>#TITRE</h5>})
@@ -79,10 +74,10 @@
                     })
                 ]</div>
             </div>
-            </div>
         </BOUCLE_whattheysay2>
-            </div>
-        </BOUCLE_whattheysay>
+
+
+       </div>
 
 
         <hr />
