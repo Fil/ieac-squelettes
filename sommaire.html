@@ -31,17 +31,6 @@
             <hr />
         </div>
 
-        <B_whatweare>
-        <BOUCLE_whatweare(ARTICLES){id_rubrique IN 4,3}{doublons}>
-            <div class="[(#COMPTEUR_BOUCLE|alterner{seven,seven})] columns what">
-            <h2 class="#EDIT{titre}">#TITRE</h2>
-            <div class="#EDIT{texte} texte offset-by-one">#TEXTE</div>
-            </div>
-        </BOUCLE_whatweare>
-        </B_whatweare>
-
-
-        <B_news>
         <div class="seven columns what">
         <div>
         <div>
@@ -57,8 +46,24 @@
             </BOUCLE_news>
             </div>
             </div>
+            
+	        <BOUCLE_contact(ARTICLES){id_rubrique IN 3}{doublons}>
+	            <div class="[(#COMPTEUR_BOUCLE|alterner{seven,seven})] columns what">
+	            <h2 class="#EDIT{titre}">#TITRE</h2>
+	            <div class="#EDIT{texte} texte offset-by-one">#TEXTE</div>
+	            </div>
+	        </BOUCLE_contact>
         </div>
-        </B_news>
+
+        <B_whatweare>
+        <BOUCLE_whatweare(ARTICLES){id_rubrique IN 4}{doublons}>
+            <div class="seven columns what">
+            <h2 class="#EDIT{titre}">#TITRE</h2>
+            <div class="#EDIT{texte} texte offset-by-one">#TEXTE</div>
+            </div>
+        </BOUCLE_whatweare>
+        </B_whatweare>
+
 
         <BOUCLE_whattheysay(RUBRIQUES){id_rubrique IN 10}{doublons}>
             <div class="seven columns what">
