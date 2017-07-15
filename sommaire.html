@@ -35,8 +35,7 @@
         <div>
             <h2>News</h2>
             <BOUCLE_news(ARTICLES){titre_mot=News}{!par date}{0,3}>
-                <div class="#EDIT{texte} texte offset-by-one">[(#ID_RUBRIQUE|=={9}|?{<h5>#TITRE</h5>})
-                ][
+                <div class="#EDIT{texte} texte offset-by-one">[<h5>(#TITRE)</h5>][
                     (#CHAPO*|?{
                         [<p>(#CHAPO|PtoBR) &nbsp; <span class="more"><a href="#URL_ARTICLE">Read more…</a></span></p>],
                         #TEXTE
