@@ -19,7 +19,6 @@
 <body class="page-sommaire">
 
 
-
     <!-- Primary Page Layout
     ================================================== -->
 
@@ -113,7 +112,7 @@
 
         <BOUCLE_therest(RUBRIQUES)
         {racine}
-        {par num titre, titre}{id_rubrique!=9}{id_rubrique!=11}{doublons}>
+        {par num titre, titre}{id_rubrique !IN 9, 11, 16}{doublons}>
             <div class="[(#TITRE*|match{History}|?{seven columns, eight columns offset-by-one})]">
             <BOUCLE_therest2(ARTICLES){id_rubrique}{doublons}>
             <div>
@@ -135,7 +134,7 @@
 
         <hr />
 
-        <BOUCLE_casestudies(RUBRIQUES){id_rubrique=9}{doublons}>
+        <BOUCLE_casestudies(RUBRIQUES){id_rubrique IN 9, 16}{doublons}>
             <div class="sixteen columns">
                 <h2 class="#EDIT{titre}">#TITRE</h2>
             </div>
